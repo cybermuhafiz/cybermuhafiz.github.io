@@ -1,0 +1,22 @@
+{% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+{% assign icon_font_size = "14px" %} <!-- Set your desired font size for the icon and text -->
+
+{% if page.last_modified_at %}
+<p class="page__date">
+  <strong><i class="fas fa-fw fa-calendar-alt" style="font-size: {{ icon_font_size }};" aria-hidden="true"></i>
+    <!-- {{ site.data.ui-text[site.locale].date_label | default: "Updated:" }} -->
+  </strong>
+  <time class="dt-published" datetime="{{ page.last_modified_at | date: ' %Y-%m-%d' }}">
+    <span style="font-size: {{ icon_font_size }};">{{ page.last_modified_at | date: date_format }}</span>
+  </time>
+</p>
+{% elsif page.date %}
+<p class="page__date">
+  <strong><i class="fas fa-fw fa-calendar-alt" style="font-size: {{ icon_font_size }};" aria-hidden="true"></i>
+    <!-- {{ site.data.ui-text[site.locale].date_label_urdu | default: "پبلش:" }} -->
+  </strong>
+  <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+    <span style="font-size: {{ icon_font_size }};">{{ page.date | date: date_format }}</span>
+  </time>
+</p>
+{% endif %}

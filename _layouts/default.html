@@ -1,0 +1,142 @@
+---
+---
+
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: " en" }}" class="no-js">
+
+<head>
+  {% include head.html %}
+  {% include head/custom.html %}
+  <!-- <link rel="stylesheet" href="{{ '/assets/css/header_colors.css' | relative_url }}"> -->
+</head>
+
+<body
+  class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+  {% include_cached skip-links.html %}
+  {% include_cached masthead.html %}
+
+  <div id="font-controls">
+    <button id="increase-font">A+</button>
+    <button id="decrease-font">A-</button>
+    <button id="reset-font">Reset</button>
+  </div>
+
+  <div id="font-select-wrapper" <label for="font-select" style="color: white; margin-right: 5px; font-size: 14px;">
+    فونٹ: </label>
+    <select id="font-select" style="color: white; font-size: 14px; padding: 2px; background-color: #1a1f35;">
+      <option value="default">ڈیفالٹ</option>
+      <option value="jameel">جمیل نوری</option>
+      <option value="mahar">مہر نستعلیق</option>
+      <option value="kasheeda">جمیل کشیدہ</option>
+    </select>
+  </div>
+
+  <div class="initial-content">
+    {{ content }}
+  </div>
+
+  {% if site.search == true %}
+  <div class="search-content">
+    {% include_cached search/search_form.html %}
+  </div>
+  {% endif %}
+
+  <div id="footer" class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include_cached footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+
+  <script src="{{ '/assets/js/block-img.js' | relative_url }}"></script>
+
+
+  <style>
+    #font-controls {
+      position: fixed;
+      top: 20px;
+      /* Adjust as needed */
+      font-family: sans-serif;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+
+    #font-controls button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      font-size: 14px;
+      cursor: pointer;
+      background-color: #1a1f35;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    #font-controls button:hover {
+      background-color: #1a1f35;
+    }
+  </style>
+
+
+  <style>
+    #font-select-wrapper {
+      position: fixed;
+      font-family: sans-serif;
+      top: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
+
+    #font-select {
+      font-size: 14px;
+      color: white;
+      padding: 2px;
+      border: none;
+      border-radius: 10px;
+      background-color: white;
+      color: white;
+      outline: none;
+      cursor: pointer;
+      transition: background-color white;
+      margin-right: 5px;
+    }
+
+    #font-select:hover {
+      background-color: #1a1f35;
+    }
+
+    #font-select-label {
+      color: white;
+      font-size: 12px;
+    }
+  </style>
+
+
+  <script src="/assets/js/font_manipulation.js"></script>
+
+</body>
+
+</html>

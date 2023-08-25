@@ -1,0 +1,25 @@
+{% capture video_id %}{{ include.id }}{% endcapture %}
+{% capture video_provider %}{{ include.provider }}{% endcapture %}
+{% capture video_danmaku %}{{ include.danmaku | default: 0 }}{% endcapture %}
+
+{% capture video_embed_code %}
+  {% case video_provider %}
+  {% when "vimeo" %}
+    <iframe src="https://player.vimeo.com/video/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  {% when "youtube" %}
+    <iframe src="https://www.youtube.com/embed/{{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  {% when "piped" %}
+    <iframe src="https://piped.video/watch?v={{ video_id }}" frameborder="0" allowfullscreen></iframe>
+  {% when "google-drive" %}
+    <iframe src="https://drive.google.com/file/d/{{ video_id }}/preview" frameborder="0" allowfullscreen></iframe>
+  {% when "bilibili" %}
+    <iframe src="https://player.bilibili.com/player.html?bvid={{ video_id }}&page=1&as_wide=1&high_quality=1&danmaku={{ video_danmaku }}" frameborder="0" allowfullscreen></iframe>
+  {% endcase %}
+{% endcapture %}
+{% assign video_embed_code = video_embed_code | strip %}
+
+{% unless video_embed_code == "" %}
+  <div class="responsive-video-container">
+    {{ video_embed_code }}
+  </div>
+{% endunless %}
