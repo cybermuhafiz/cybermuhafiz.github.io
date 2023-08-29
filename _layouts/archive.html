@@ -3,6 +3,12 @@ layout: default
 header:
 ---
 
+<!--Home Page Header -->
+
+<div class="header-image">
+  <img src="{{ site.baseurl }}/assets/images/headers/main_header.png" alt="Header Image">
+</div>
+
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
 {% include page__hero.html %}
 {% elsif page.header.video.id and page.header.video.provider %}
@@ -25,3 +31,23 @@ header:
     {{ content }}
   </div>
 </div>
+
+
+<!--Home Page Header Style-->
+<style>
+  .header-image {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .header-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .header-image {
+      padding: 0 10px;
+    }
+  }
+</style>
