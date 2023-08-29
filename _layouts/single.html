@@ -104,8 +104,11 @@ layout: default
       {% endfor %}
     </div>
   </div>
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
+  <!-- {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %} -->
   {% elsif page.id and page.related %}
+  <script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XEl8ZV3o" data-limit="5"
+    data-page-id="{{ page.url | absolute_url }}" data-color="87CEEB" data-colorful="1" data-dark="1">
+    </script>
   <div class="page__related">
     <h2 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}
     </h2>
@@ -120,7 +123,3 @@ layout: default
   </div>
   {% endif %}
 </div>
-
-<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XEl8ZV3o" data-limit="5"
-  data-page-id="{{ page.url | absolute_url }}" data-color="87CEEB" data-colorful="1" data-dark="1">
-  </script>
