@@ -206,17 +206,26 @@
 
 .author__bio {
   margin: 0;
+  padding-top: 0px;
 
 
   @include breakpoint($large) {
     margin-top: 10px;
     margin-bottom: 20px;
   }
+  h2 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 0; 
+  }
 }
 
 .author__urls-wrapper {
   position: relative;
-  display: table-cell;
+  display: none;
   vertical-align: middle;
   font-family: $sans-serif;
   z-index: 20;
