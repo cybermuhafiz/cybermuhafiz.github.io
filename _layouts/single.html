@@ -127,11 +127,13 @@ layout: default
 
 
 <style>
-  #commentsapp-root {
-    font-family: 'Nafees', $custom-font, sans-serif;
+  .custom-comments-font {
+    font-family: 'Nafees', 'Kasheeda', sans-serif;
   }
 </style>
 
-<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XEl8ZV3o" data-limit="5"
-  data-page-id="{{ page.url | absolute_url }}" data-color="87CEEB" data-colorful="1" data-dark="1">
-  </script>
+<div class="custom-comments-font">
+  <script async src="https://comments.app/js/widget.js?3" data-comments-app-website="XEl8ZV3o" data-limit="5"
+    data-page-id="{{ page.url | absolute_url }}" data-color="87CEEB" data-colorful="1" data-dark="1">
+    </script>
+</div>
