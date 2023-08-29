@@ -18,6 +18,10 @@ layout: default
 {% endunless %}
 {% endif %}
 
+<head>
+  <link rel="stylesheet" href="{{ " /assets/css/comment.scss" | relative_url }}">
+</head>
+
 <div id="main" role="main">
   {% include sidebar.html %}
 
@@ -121,9 +125,10 @@ layout: default
   {% endif %}
 </div>
 
+
 <style>
   #commentsapp-root {
-    font-family: $custom-font, sans-serif;
+    font-family: 'Mahar Nastaliq', $custom-font, sans-serif;
   }
 </style>
 
