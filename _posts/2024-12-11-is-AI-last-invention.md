@@ -1,7 +1,7 @@
 ---
 title: کیا مصنوعی ذہانت انسانیت کی آخری ایجاد ہے؟
 author: abusarim
-excerpt:  اوپن سورس کی کہانی!
+excerpt:  ایک مصنوعی ذہانت کی کہانی۔
 header:
   image: 'assets/images/ai/brain-3d.png'
 ---
