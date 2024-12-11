@@ -10,7 +10,6 @@ header:
 * toc
 {:toc}
 
-![linux]({{site.baseurl}}/assets/images/linux.png){: width="100px" height="100px" .align-center}
 
 #  مقدمہ
 
